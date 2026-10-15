@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta name="google-site-verification" content="PnzFI5HtKxrgKuiS17qYo9xZbR27WWfeMzWrs9HrAZc" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tại sao website không truy cập được tại TP.HCM? Nguyên nhân và cách khắc phục</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Chevrons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-dark: #121F28;
+            --accent-gold: #D4AF37;
+            --bg-white: #FFFFFF;
+            --bg-light: #F4F4F4;
+            --text-dark: #333333;
+            --text-muted: #555555;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--bg-white);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-dark);
+        }
+
+        /* Header Styles */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--primary-dark);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .logo-container img {
+            height: 40px;
+            object-fit: contain;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: #FFFFFF;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--accent-gold);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #121F28 0%, #1a2f3d 100%);
+            color: #FFFFFF;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 120px 20px 80px 20px;
+            position: relative;
+        }
+
+        .hero h1 {
+            color: #FFFFFF;
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            max-width: 950px;
+            margin-bottom: 30px;
+            font-weight: 700;
+            line-height: 1.25;
+        }
+
+        .cta-button {
+            background-color: var(--accent-gold);
+            color: var(--primary-dark);
+            padding: 14px 35px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            background-color: #e6c547;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+        }
+
+        /* Section Dividers CSS Gradient */
+        .section-divider {
+            height: 4px;
+            background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+            width: 100%;
+        }
+
+        /* Sections Background Alternation */
+        section {
+            padding: 80px 10%;
+        }
+
+        section:nth-of-type(odd) {
+            background-color: var(--bg-white);
+        }
+
+        section:nth-of-type(even) {
+            background-color: var(--bg-light);
+        }
+
+        .content-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: clamp(1.8rem, 3vw, 2.3rem);
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 12px;
+            line-height: 1.3;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-gold);
+        }
+
+        h3 {
+            font-size: 1.35rem;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: var(--primary-dark);
+        }
+
+        p, ul.text-list {
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            font-size: 1rem;
+        }
+
+        ul.text-list {
+            padding-left: 20px;
+        }
+
+        ul.text-list li {
+            margin-bottom: 8px;
+        }
+
+        a {
+            color: var(--accent-gold);
+            text-decoration: underline;
+            font-weight: 600;
+        }
+
+        a:hover {
+            color: var(--primary-dark);
+        }
+
+        /* FAQ Accordion Styles */
+        .faq-container {
+            margin-top: 30px;
+        }
+
+        .faq-card {
+            background-color: var(--bg-white);
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+        }
+
+        .faq-card:hover {
+            border-color: var(--accent-gold);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.1);
+        }
+
+        .faq-question {
+            padding: 20px;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--primary-dark);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: transparent;
+            border: none;
+            width: 100%;
+            text-align: left;
+        }
+
+        .faq-question i {
+            color: var(--accent-gold);
+            transition: transform 0.3s ease;
+            margin-left: 15px;
+        }
+
+        .faq-card.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            padding: 0 20px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .faq-card.active .faq-answer {
+            max-height: 500px;
+            padding: 0 20px 20px 20px;
+        }
+
+        /* Responsive Navbar toggling (Mobile) */
+        .menu-toggle {
+            display: none;
+            color: #FFFFFF;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--primary-dark);
+                padding: 20px;
+                text-align: center;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+            }
+            nav ul.active {
+                display: flex;
+            }
+            section {
+                padding: 60px 5%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo-container">
+            <img src="logo.webp" alt="ThabetHub Logo">
+        </div>
+        <div class="menu-toggle" id="mobile-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+        <nav>
+            <ul id="nav-list">
+                <li><a href="#gioi-thieu">Giới Thiệu</a></li>
+                <li><a href="#nguyen-nhan">Nguyên Nhân</a></li>
+                <li><a href="#xac-dinh-loi">Xác Định Lỗi</a></li>
+                <li><a href="#khac-phuc">Cách Khắc Phục</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1 data-aos="fade-up" data-aos-duration="1000">Tại sao website không truy cập được tại TP.HCM? Nguyên nhân và cách khắc phục</h1>
+        <div data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+            <a href="#gioi-thieu" class="cta-button">Xem Hướng Dẫn Chi Tiết</a>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Section 1: Giới Thiệu -->
+    <section id="gioi-thieu">
+        <div class="content-container" data-aos="fade-up">
+            <h2>Giới Thiệu</h2>
+            <p>Website không truy cập được tại TP.HCM có thể khiến người dùng không thể đọc thông tin, sử dụng dịch vụ trực tuyến hoặc hoàn tất giao dịch[cite: 1]. Khi mở một trang web, bạn có thể gặp lỗi kết nối, màn hình trắng, thời gian tải quá lâu hoặc thông báo không tìm thấy máy chủ[cite: 1]. Đôi khi, chỉ một số website gặp sự cố, trong khi các trang khác vẫn hoạt động bình thường[cite: 1]. Tình trạng này có thể xảy ra trên Wi-Fi, mạng di động hoặc một nhà mạng cụ thể[cite: 1].</p>
+            <p>Để khắc phục, bạn cần xác định nguyên nhân trước khi thay đổi cài đặt thiết bị[cite: 1]. Hãy thử kết nối bằng mạng khác, kiểm tra DNS, xóa bộ nhớ đệm trình duyệt và xác minh trạng thái máy chủ[cite: 1]. Những bước này giúp bạn phân biệt lỗi từ thiết bị, kết nối Internet, nhà mạng hay chính website, từ đó chọn cách xử lý phù hợp[cite: 1].</p>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Section 2: Nguyên nhân -->
+    <section id="nguyen-nhan">
+        <div class="content-container" data-aos="fade-up">
+            <h2>1. Tại sao website không truy cập được tại TP.HCM?</h2>
+            <p>Website không truy cập được tại TP.HCM không có nghĩa là trang web đã bị chặn[cite: 1]. Sự cố có thể xuất phát từ thiết bị, kết nối Internet, hệ thống DNS, nhà cung cấp dịch vụ Internet (ISP) hoặc máy chủ website[cite: 1]. Xác định đúng nguyên nhân giúp bạn tránh thay đổi cài đặt không cần thiết[cite: 1].</p>
+            
+            <h3>Lỗi kết nối Internet hoặc Wi-Fi</h3>
+            <p>Tín hiệu Wi-Fi yếu, router hoạt động không ổn định hoặc mạng di động bị gián đoạn đều có thể khiến website tải chậm hoặc không mở được[cite: 1]. Gói dữ liệu hết dung lượng tốc độ cao cũng có thể làm giảm tốc độ truy cập[cite: 1]. Hãy thử mở nhiều website và chuyển sang mạng di động để kiểm tra[cite: 1].</p>
+            
+            <h3>Sự cố DNS hoặc máy chủ website</h3>
+            <p>DNS có nhiệm vụ chuyển tên miền thành địa chỉ IP[cite: 1]. Nếu quá trình phân giải gặp lỗi, trình duyệt có thể không tìm thấy máy chủ[cite: 1]. Ngoài ra, máy chủ quá tải, bảo trì, lỗi HTTP 5xx, chứng chỉ SSL/TLS hết hạn hoặc cấu hình CDN không chính xác cũng có thể gây gián đoạn[cite: 1].</p>
+            <p>Nếu chỉ một website gặp lỗi, hãy kiểm tra tên miền và trạng thái máy chủ đó[cite: 1]. Nếu nhiều website cùng không truy cập được, hãy ưu tiên kiểm tra kết nối Internet và DNS[cite: 1].</p>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Section 3: Xác định lỗi -->
+    <section id="xac-dinh-loi">
+        <div class="content-container" data-aos="fade-up">
+            <h2>2. Cách xác định website bị lỗi do thiết bị, mạng hay máy chủ</h2>
+            <p>Khi website không truy cập được tại TP.HCM, bạn nên kiểm tra từng yếu tố theo một trình tự rõ ràng[cite: 1]. Cách này giúp xác định nguồn gây lỗi mà không cần thay đổi nhiều cài đặt cùng lúc[cite: 1]. Trước tiên, hãy kiểm tra thiết bị và kết nối Internet[cite: 1]. Sau đó, xác minh trạng thái hoạt động của website[cite: 1].</p>
+            
+            <h3>Kiểm tra bằng thiết bị và mạng khác</h3>
+            <p>Mở cùng một website trên điện thoại và máy tính để so sánh kết quả[cite: 1]. Tiếp theo, chuyển từ Wi-Fi sang mạng di động hoặc thử một kết nối Internet khác[cite: 1]. Nếu chỉ một thiết bị gặp lỗi, hãy kiểm tra trình duyệt và cài đặt mạng[cite: 1]. Nếu lỗi chỉ xảy ra trên một mạng, hãy kiểm tra router, DNS hoặc liên hệ nhà cung cấp dịch vụ Internet (ISP)[cite: 1].</p>
+            
+            <h3>Kiểm tra trạng thái website</h3>
+            <p>Kiểm tra thông báo bảo trì trên website hoặc sử dụng công cụ kiểm tra trạng thái website độc lập[cite: 1]. Nếu có công cụ hỗ trợ, hãy xem mã phản hồi HTTP để nhận biết lỗi máy chủ, chẳng hạn lỗi 500 hoặc 503[cite: 1]. Nếu website không hoạt động trên nhiều thiết bị và mạng khác nhau, sự cố có thể nằm ở máy chủ[cite: 1].</p>
+            <p>Hãy thay đổi từng yếu tố một và ghi lại kết quả để xác định nguyên nhân chính xác hơn[cite: 1].</p>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Section 4: Cách khắc phục -->
+    <section id="khac-phuc">
+        <div class="content-container" data-aos="fade-up">
+            <h2>3. Cách khắc phục website không truy cập được trên điện thoại và máy tính</h2>
+            <p>Khi website không mở được, hãy thử các biện pháp đơn giản trước khi thay đổi cài đặt mạng[cite: 1]. Cách xử lý phù hợp phụ thuộc vào thông báo lỗi và phạm vi ảnh hưởng[cite: 1].</p>
+            
+            <h3>Khởi động lại kết nối mạng và trình duyệt</h3>
+            <p>Tải lại trang bằng nút Refresh hoặc đóng rồi mở lại trình duyệt[cite: 1]. Nếu nhiều thiết bị cùng mất kết nối, hãy khởi động lại router và chờ mạng hoạt động trở lại[cite: 1]. Khi xuất hiện cảnh báo SSL/TLS, hãy kiểm tra ngày, giờ và múi giờ trên thiết bị[cite: 1]. Không bỏ qua cảnh báo bảo mật để tiếp tục truy cập[cite: 1].</p>
+            
+            <h3>Xóa cache và kiểm tra tiện ích trình duyệt</h3>
+            <p>Xóa bộ nhớ đệm (cache) của website đang gặp lỗi[cite: 1]. Thử mở trang bằng chế độ ẩn danh để kiểm tra xung đột cookie hoặc tiện ích mở rộng[cite: 1]. Nếu website hoạt động bình thường, hãy kiểm tra các tiện ích và cập nhật Chrome, Safari hoặc Firefox lên phiên bản mới[cite: 1].</p>
+            
+            <h3>Khi nào nên đổi DNS?</h3>
+            <p>DNS chuyển tên miền thành địa chỉ IP để trình duyệt tìm đúng máy chủ[cite: 1]. Nếu gặp lỗi phân giải tên miền, bạn có thể cân nhắc DNS công cộng đáng tin cậy như Google Public DNS hoặc Cloudflare DNS[cite: 1]. Trước khi thay đổi, hãy ghi lại cài đặt ban đầu[cite: 1]. Nếu lỗi vẫn tồn tại, hãy khôi phục cài đặt cũ và kiểm tra nguyên nhân khác[cite: 1].</p>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Section 5: Định tuyến & Mạng -->
+    <section>
+        <div class="content-container" data-aos="fade-up">
+            <h2>4. Vì sao website chỉ không truy cập được trên một số mạng tại TP.HCM?</h2>
+            <p>Một website có thể hoạt động bình thường trên mạng này nhưng không thể truy cập trên mạng khác[cite: 1]. Tình trạng này không nhất thiết có nghĩa là website bị chặn[cite: 1]. Nguyên nhân có thể liên quan đến định tuyến Internet, cấu hình DNS hoặc hệ thống bảo mật của máy chủ[cite: 1].</p>
+            
+            <h3>Định tuyến mạng và sự cố từ nhà cung cấp Internet</h3>
+            <p>Nhà cung cấp dịch vụ Internet (ISP) sử dụng các tuyến mạng để kết nối người dùng với máy chủ[cite: 1]. Nếu một tuyến gặp sự cố, mất gói tin hoặc định tuyến bất thường, website có thể tải chậm hoặc báo lỗi hết thời gian chờ[cite: 1]. Hãy thử một mạng khác trước khi kết luận nguyên nhân[cite: 1].</p>
+            
+            <h3>CDN, địa chỉ IP và bộ lọc bảo mật</h3>
+            <p>Mạng phân phối nội dung (CDN) có thể chuyển yêu cầu đến các máy chủ khác nhau[cite: 1]. Tường lửa hoặc hệ thống chống tấn công cũng có thể chặn nhầm địa chỉ IP của người dùng[cite: 1]. Nếu lỗi chỉ xuất hiện trên một mạng, hãy ghi lại thời gian, thông báo lỗi và tên ISP[cite: 1]. Những thông tin này giúp bộ phận hỗ trợ phân biệt sự cố mạng cục bộ với lỗi định tuyến hoặc cấu hình máy chủ[cite: 1].</p>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Section 6: Các thông báo lỗi -->
+    <section>
+        <div class="content-container" data-aos="fade-up">
+            <h2>5. Cách kiểm tra lỗi truy cập website theo từng thông báo</h2>
+            <p>Thông báo lỗi trên trình duyệt giúp bạn xác định hướng kiểm tra phù hợp[cite: 1]. Mỗi mã lỗi phản ánh một vấn đề khác nhau, vì vậy không nên áp dụng cùng một cách khắc phục cho mọi trường hợp[cite: 1].</p>
+            
+            <h3>ERR_CONNECTION_TIMED_OUT hoặc ERR_CONNECTION_RESET</h3>
+            <p>Lỗi này có thể liên quan đến kết nối mạng, định tuyến, tường lửa hoặc máy chủ không phản hồi đúng cách[cite: 1]. Hãy thử chuyển sang mạng khác và kiểm tra xem các website khác có hoạt động bình thường không[cite: 1].</p>
+            
+            <h3>DNS_PROBE_FINISHED_NXDOMAIN</h3>
+            <p>Lỗi này cho biết trình duyệt không tìm thấy tên miền tương ứng với địa chỉ được yêu cầu[cite: 1]. Hãy kiểm tra chính tả tên miền, cấu hình DNS và trạng thái đăng ký tên miền[cite: 1].</p>
+            
+            <h3>Lỗi HTTP 403, 404 và 5xx</h3>
+            <ul class="text-list">
+                <li><strong>403:</strong> Máy chủ từ chối yêu cầu do quyền truy cập hoặc chính sách bảo mật[cite: 1].</li>
+                <li><strong>404:</strong> Trang được yêu cầu không tồn tại tại đường dẫn đó[cite: 1].</li>
+                <li><strong>5xx:</strong> Máy chủ hoặc dịch vụ phía máy chủ đang gặp sự cố[cite: 1].</li>
+            </ul>
+            <p>Hãy dựa vào thông báo cụ thể để chọn cách xử lý thay vì thay đổi DNS hoặc cài đặt mạng một cách không cần thiết[cite: 1].</p>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Section 7: Khi nào cần liên hệ -->
+    <section>
+        <div class="content-container" data-aos="fade-up">
+            <h2>6. Khi nào cần liên hệ nhà mạng hoặc quản trị viên website?</h2>
+            <p>Nếu đã thử các bước kiểm tra cơ bản nhưng website vẫn không truy cập được tại TP.HCM, bạn nên liên hệ bộ phận hỗ trợ phù hợp[cite: 1]. Cung cấp thông tin rõ ràng sẽ giúp quá trình xử lý nhanh hơn[cite: 1].</p>
+            
+            <h3>Liên hệ nhà cung cấp Internet khi nào?</h3>
+            <p>Hãy liên hệ ISP nếu nhiều website cùng gặp lỗi trên một kết nối, mạng thường xuyên mất ổn định hoặc độ trễ tăng bất thường[cite: 1]. Cung cấp thời gian xảy ra lỗi, thiết bị, loại kết nối và thông báo lỗi[cite: 1].</p>
+            
+            <h3>Liên hệ quản trị viên website khi nào?</h3>
+            <p>Liên hệ quản trị viên nếu một website không hoạt động trên nhiều thiết bị và mạng khác nhau, hoặc lỗi máy chủ kéo dài[cite: 1]. Gửi ảnh chụp màn hình và thông tin lỗi, nhưng không chia sẻ mật khẩu hay dữ liệu cá nhân[cite: 1].</p>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Section 8: Độ tin cậy & Link ThabetHub -->
+    <section>
+        <div class="content-container" data-aos="fade-up">
+            <h2>7. Cách kiểm tra độ tin cậy của website trước khi tiếp tục truy cập</h2>
+            
+            <h3>Kiểm tra tên miền và chứng chỉ bảo mật</h3>
+            <p>Xác minh chính xác tên miền và kết nối HTTPS trước khi nhập thông tin[cite: 1]. Không bỏ qua cảnh báo chứng chỉ SSL/TLS hoặc tải tệp từ nguồn không đáng tin cậy[cite: 1].</p>
+            
+            <h3>Kiểm tra thông tin hỗ trợ chính thức</h3>
+            <p>Tìm thông báo bảo trì và kênh hỗ trợ trên website chính thức[cite: 1]. Với <a href="https://thabethub.com/">ThabetHub</a>, hãy xác minh đúng tên miền và thông tin liên hệ qua nguồn đáng tin cậy[cite: 1]. Tránh truy cập liên kết chưa được xác minh hoặc cung cấp dữ liệu cá nhân khi chưa chắc chắn về độ an toàn[cite: 1].</p>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Section 9: FAQ -->
+    <section id="faq">
+        <div class="content-container" data-aos="fade-up">
+            <h2>Câu hỏi thường gặp về lỗi không truy cập được website tại TP.HCM</h2>
+            
+            <div class="faq-container">
+                <div class="faq-card">
+                    <button class="faq-question">
+                        <span>Tại sao tôi không vào được một website nhưng các website khác vẫn hoạt động?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Nguyên nhân có thể là lỗi DNS của tên miền, máy chủ gặp sự cố, chứng chỉ bảo mật hết hạn hoặc chính sách truy cập riêng của website[cite: 1].</p>
+                    </div>
+                </div>
+
+                <div class="faq-card">
+                    <button class="faq-question">
+                        <span>Đổi DNS có giúp truy cập website không?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Có thể, nếu lỗi xuất phát từ quá trình phân giải tên miền[cite: 1]. Tuy nhiên, đổi DNS không khắc phục được máy chủ đang ngừng hoạt động[cite: 1].</p>
+                    </div>
+                </div>
+
+                <div class="faq-card">
+                    <button class="faq-question">
+                        <span>Tại sao website mở được bằng 4G nhưng không mở được bằng Wi-Fi?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Sự khác biệt có thể đến từ DNS, router, định tuyến của ISP hoặc bộ lọc mạng[cite: 1]. Hãy kiểm tra từng yếu tố để xác định nguyên nhân[cite: 1].</p>
+                    </div>
+                </div>
+
+                <div class="faq-card">
+                    <button class="faq-question">
+                        <span>Website không truy cập được tại TP.HCM có nghĩa là website bị chặn không?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Không[cite: 1]. Cần thử nhiều mạng, kiểm tra thông báo lỗi và xác minh trạng thái website trước khi kết luận[cite: 1].</p>
+                    </div>
+                </div>
+            </div>
+
+            <p style="margin-top: 25px;">Để xử lý hiệu quả, hãy kiểm tra kết nối, thử mạng khác, xác định mã lỗi và kiểm tra DNS[cite: 1]. Nếu sự cố vẫn tiếp diễn, hãy liên hệ nhà mạng hoặc quản trị viên website để được hỗ trợ[cite: 1].</p>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Section 10: Kết luận -->
+    <section>
+        <div class="content-container" data-aos="fade-up">
+            <h2>Kết luận</h2>
+            <p>Khi website không truy cập được tại TP.HCM, hãy kiểm tra nhiều website, thử kết nối bằng mạng khác và xác định thông báo lỗi trên trình duyệt[cite: 1]. Tiếp theo, kiểm tra DNS và trạng thái máy chủ để tìm nguyên nhân[cite: 1]. Nếu sự cố vẫn tiếp diễn, hãy liên hệ nhà cung cấp Internet hoặc quản trị viên website để được hỗ trợ[cite: 1].</p>
+        </div>
+    </section>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navList = document.getElementById('nav-list');
+
+        mobileMenu.addEventListener('click', () => {
+            navList.classList.toggle('active');
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('nav ul li a').forEach(link => {
+            link.addEventListener('click', () => {
+                navList.classList.remove('active');
+            });
+        });
+
+        // FAQ Accordion Functionality
+        const faqCards = document.querySelectorAll('.faq-card');
+
+        faqCards.forEach(card => {
+            const questionBtn = card.querySelector('.faq-question');
+            questionBtn.addEventListener('click', () => {
+                faqCards.forEach(item => {
+                    if (item !== card) {
+                        item.classList.remove('active');
+                    }
+                });
+                card.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
